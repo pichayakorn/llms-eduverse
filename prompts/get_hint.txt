@@ -1,0 +1,1 @@
+Create 4 fill in the blank question the choices picked from 5 of 10 in the words list. The word "<TARGET_WORD>" is the correct answer for all questions and must be picked as a candidate in the selected list. The word list is [<WORDS_LIST>].

@@ -1,0 +1,1 @@
+Create a list of 20 unique nouns in "<CATEGORY>" category and pick 10 word randomly from the list.
