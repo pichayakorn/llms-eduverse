@@ -155,34 +155,33 @@ def generate_words():
     messages = []
     messages.append({"role": "user", "content": get_word_prompt})
 
-    response = chat_completion_request(
-        messages=messages,
-        tools=tools,
-        tool_choice={"type": "function", "function": {"name": "rand_word"}}
-    )
-
-    if isinstance(response, Exception):
-      return jsonify({'error': str(response)}), 500
-
-    # Extract and format the response into a list of nouns
-    print(response.choices[0].message.tool_calls)
-
+    # Get words from the model
+    regen: bool = True
     word_list = None
-    try:
-        # Extract the list of words from the response
-        tool_calls = response.choices[0].message.tool_calls
-        if tool_calls:
-          tool_function_name = tool_calls[0].function.name
-          word_list = eval(tool_calls[0].function.arguments)['word_list']
-          if tool_function_name == 'rand_word':
-            if len(word_list) == 20:
-                word_list = rand_word(word_list)
-            else:
-                raise ValueError("Response did not contain a list of 20 words")
-            
-            
-    except Exception as e:
-        return jsonify({'error': 'Failed to parse the response', 'details': str(e)}), 500
+    while(regen):
+        if(regen):
+            response = chat_completion_request(
+                messages=messages,
+                tools=tools,
+                tool_choice={"type": "function", "function": {"name": "rand_word"}}
+            )
+            regen = False
+            print(response.choices[0].message.tool_calls)
+
+            try:
+                tool_calls = response.choices[0].message.tool_calls
+                if tool_calls:
+                  tool_function_name = tool_calls[0].function.name
+                  full_word_list = eval(tool_calls[0].function.arguments)['word_list']
+                  if tool_function_name == 'rand_word':
+                    if len(full_word_list) == 20:
+                        word_list = rand_word(full_word_list)
+                    else:
+                        regen = True
+                else:
+                    return jsonify({'error': 'Response did not contain a list of 20 words'}), 500
+            except Exception as e:
+                return jsonify({'error': 'Failed to parse the response', 'details': str(e)}), 500
 
     target_word = word_list[0]
     combined_list = ', '.join(word_list)
@@ -192,23 +191,31 @@ def generate_words():
     messages = []
     messages.append({"role": "user", "content": get_word_score_prompt})
 
-    response = chat_completion_request(
-        messages=messages,
-        tools=tools,
-        tool_choice={"type": "function", "function": {"name": "get_word_score"}}
-    )
-    print(response.choices[0].message.tool_calls)
-
+    # Get scores from the model
+    regen = True
     score_list = None
-    try:
-        tool_calls = response.choices[0].message.tool_calls
-        if tool_calls:
-          tool_function_name = tool_calls[0].function.name
-          score_list = eval(tool_calls[0].function.arguments)['score_list']
-            
-            
-    except Exception as e:
-        return jsonify({'error': 'Failed to parse the response', 'details': str(e)}), 500
+    while(regen):
+        if (regen):
+            response = chat_completion_request(
+                messages=messages,
+                tools=tools,
+                tool_choice={"type": "function", "function": {"name": "get_word_score"}}
+            )
+            regen = False
+            print(response.choices[0].message.tool_calls)
+
+            try:
+                tool_calls = response.choices[0].message.tool_calls
+                if tool_calls:
+                  tool_function_name = tool_calls[0].function.name
+                  score_list = eval(tool_calls[0].function.arguments)['score_list']
+                  if score_list:
+                    if len(score_list) == 10:
+                        regen = False
+                    else:
+                        regen = True
+            except Exception as e:
+                return jsonify({'error': 'Failed to parse the response', 'details': str(e)}), 500
 
     get_hint_prompt = get_hint_prompt_template.replace("<TARGET_WORD>", target_word)
     get_hint_prompt = get_hint_prompt.replace("<WORD_LIST>", combined_list)
@@ -217,7 +224,7 @@ def generate_words():
     messages.append({"role": "user", "content": get_hint_prompt})
 
     # Get hints from the model
-    regen: bool = True
+    regen = True
     hint_list = None
     while(regen):
       if (regen):
