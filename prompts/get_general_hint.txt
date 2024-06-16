@@ -1,0 +1,1 @@
+Create one general fill-in-the-blank question where the missing place is somewhere in the sentence denote with four underscore symbols. The correct answer can be any option from the list. Correct answer list: [<WORD_LIST>]. Ensure that every word in the list can fill in the missing word.
