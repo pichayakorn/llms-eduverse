@@ -77,6 +77,15 @@ def detect_multiple_placeholders(sentence):
     else:
         return False
 
+def has_duplicates(word_list):
+    seen = set()
+    for word in word_list:
+        word_lower = word.lower()
+        if word_lower in seen:
+            return True
+        seen.add(word_lower)
+    return False
+
 def rand_word(word_list: list):
     if isinstance(word_list, list) and len(word_list) == 20:
       # Use random.sample to pick 10 unique elements from word_list
@@ -225,6 +234,8 @@ def generate_words():
                   if tool_function_name == 'rand_word':
                     if len(full_word_list) == 20:
                         word_list = rand_word(full_word_list)
+                        if has_duplicates(word_list):
+                            regen = True
                     else:
                         regen = True
                 else:
