@@ -3,7 +3,7 @@
 Kantinan Plupattanakit, Pratch Suntichaikul, Pittawat Taveekitworachai, Ruck Thawonmas, Jeremy White, Kingkarn Sookhanaphibarn, and Worawat Choensawat.  
 Accepted at [2024 IEEE Global Conference on Consumer Electronics (GCCE 2024)](https://www.ieee-gcce.org/2024/index.html).
 
-This repository contains the code and the data for the paper "[LLMs in Eduverse: LLM-integrated English Educational Game in Metaverse](https://www.ieee-gcce.org/2024/index.html)".
+This repository contains the code and the data for the paper "[LLMs in Eduverse: LLM-integrated English Educational Game in Metaverse](https://doi.org/10.1109/GCCE62371.2024.10760474)".
 
 ## Setup
 
