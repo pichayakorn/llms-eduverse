@@ -1,9 +1,21 @@
-# LLMs in Eduverse: LLM-integrated English Educational Game in Metaverse
+# LLMs in Eduverse: LLM-Integrated English Educational Game in Metaverse
 
-Kantinan Plupattanakit, Pratch Suntichaikul, Pittawat Taveekitworachai, Ruck Thawonmas, Jeremy White, Kingkarn Sookhanaphibarn, and Worawat Choensawat.  
-Accepted at [2024 IEEE Global Conference on Consumer Electronics (GCCE 2024)](https://www.ieee-gcce.org/2024/index.html).
+This project was originally introduced in the  
+[2024 IEEE Global Conference on Consumer Electronics (GCCE 2024)](https://www.ieee-gcce.org/2024/index.html)
+and later extended in a journal publication.
 
-This repository contains the code and the data for the paper "[LLMs in Eduverse: LLM-integrated English Educational Game in Metaverse](https://doi.org/10.1109/GCCE62371.2024.10760474)".
+This repository provides the **core API implementation** used in the following publications:
+
+- **Conference paper (GCCE 2024)**  
+  *LLMs in Eduverse: LLM-Integrated English Educational Game in Metaverse*  
+  IEEE Global Conference on Consumer Electronics (GCCE 2024)
+
+- **Journal paper**  
+  *LLMs in EduGame: A Web-Based Interactive English Learning Game*  
+  *(Accepted)*
+
+The API and codebase in this repository are shared across these works.  
+The journal paper extends and builds upon the system introduced in the GCCE 2024 paper.
 
 ## Setup
 
