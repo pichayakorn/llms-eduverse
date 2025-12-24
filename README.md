@@ -10,7 +10,8 @@ This repository provides the **core API implementation** used in the following p
 
 - **Journal paper**  
   *LLMs in EduGame: A Web-Based Interactive English Learning Game*  
-  *(Accepted)*
+  *(Accepted)*\
+  **Protocol of user study conducted.**
   ![Protocol of user study](ProtocolUS.png)
 
 The API and codebase in this repository are shared across these works.  
