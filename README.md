@@ -1,8 +1,6 @@
 # LLMs in Eduverse: LLM-Integrated English Educational Game in Metaverse
 
-This project was originally introduced in the  
-[2024 IEEE Global Conference on Consumer Electronics (GCCE 2024)](https://www.ieee-gcce.org/2024/index.html)
-and later extended in a journal publication.
+This project was originally introduced in the [2024 IEEE Global Conference on Consumer Electronics (GCCE 2024)](https://www.ieee-gcce.org/2024/index.html) and later extended in a journal publication.
 
 This repository provides the **core API implementation** used in the following publications:
 
