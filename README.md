@@ -11,7 +11,7 @@ This repository provides the **core API implementation** used in the following p
 - **Journal paper**  
   *LLMs in EduGame: A Web-Based Interactive English Learning Game*  
   *(Accepted)*
-  ![Protocol of user study]{Protocol US.jpg}
+  ![Protocol of user study](ProtocolUS.jpg)
 
 The API and codebase in this repository are shared across these works.  
 The journal paper extends and builds upon the system introduced in the GCCE 2024 paper.
