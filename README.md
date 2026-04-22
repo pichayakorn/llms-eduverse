@@ -4,15 +4,15 @@ This project was originally introduced in the [2024 IEEE Global Conference on Co
 
 This repository provides the **core API implementation** used in the following publications:
 
-- **Conference paper (GCCE 2024)**  
-  *LLMs in Eduverse: LLM-Integrated English Educational Game in Metaverse*  
-  IEEE Global Conference on Consumer Electronics (GCCE 2024)
+- **[LLMs in Eduverse: LLM-Integrated English Educational Game in Metaverse](https://doi.org/10.1109/GCCE62371.2024.10760474)**  
+  *2024 IEEE 13th Global Conference on Consumer Electronics (GCCE)*  
 
-- **Journal paper**  
-  *LLMs in EduGame: A Web-Based Interactive English Learning Game*  
-  *(Accepted)*\
-  **Protocol of user study conducted.**
-  ![Protocol of user study](ProtocolUS.jpg)
+- **[LLMs in EduGame: A Web-Based Interactive English Learning Game](https://doi.org/10.2197/ipsjjip.34.230)**  
+  *2026 Journal of Information Processing*  
+
+## Protocol of user study conducted.
+  
+![Protocol of user study](ProtocolUS.jpg)
 
 The API and codebase in this repository are shared across these works.  
 The journal paper extends and builds upon the system introduced in the GCCE 2024 paper.
@@ -42,7 +42,7 @@ flask run
 
 ## Citation
 ```bibtex
-@inproceedings{plupattanakit2024llms,
+@inproceedings{plupattanakit2024llms1,
   author={Plupattanakit, Kantinan and Suntichaikul, Pratch and Taveekitworachai, Pittawat and Thawonmas, Ruck and White, Jeremy and Sookhanaphibarn, Kingkarn and Choensawat, Worawat},
   booktitle={2024 IEEE 13th Global Conference on Consumer Electronics (GCCE)}, 
   title={LLMs in Eduverse: LLM-Integrated English Educational Game in Metaverse}, 
@@ -50,4 +50,15 @@ flask run
   pages={257-258},
   keywords={Metaverse;Large language models;Semantics;Refining;Stochastic processes;Prototypes;Games;Consumer electronics;Large language models;Roblox;Metaverse;Word Guessing Game},
   doi={10.1109/GCCE62371.2024.10760474}}
+```
+```bibtex
+@article{plupattanakit2024llms2,
+  title={LLMs in EduGame: A Web-based Interactive English Learning Game},
+  author={Kantinan Plupattanakit and Pratch Suntichaikul and Ibrahim Khan and Ruck Thawonmas and Jeremy White and Kingkarn Sookhanaphibarn and Worawat Choensawat},
+  journal={Journal of Information Processing},
+  volume={34},
+  pages={230-238},
+  year={2026},
+  doi={10.2197/ipsjjip.34.230}
+}
 ```
