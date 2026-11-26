@@ -1,3 +1,4 @@
+import json
 import openai
 import random
 import os
@@ -24,7 +25,7 @@ CATEGORIES = [
     "vehicle",
     "city",
     "food",
-    "furniture"
+    "furniture",
     "music genre",
     "language",
     "planet",
@@ -39,7 +40,6 @@ CATEGORIES = [
     "bird",
     "reptile",
     "ocean",
-    "furniture",
     "clothing",
     "technology"
 ]
@@ -230,7 +230,7 @@ def generate_words():
                 tool_calls = response.choices[0].message.tool_calls
                 if tool_calls:
                   tool_function_name = tool_calls[0].function.name
-                  full_word_list = eval(tool_calls[0].function.arguments)['word_list']
+                  full_word_list = json.loads(tool_calls[0].function.arguments)['word_list']
                   if tool_function_name == 'rand_word':
                     if len(full_word_list) == 20:
                         word_list = rand_word(full_word_list)
@@ -272,7 +272,7 @@ def generate_words():
                 tool_calls = response.choices[0].message.tool_calls
                 if tool_calls:
                   tool_function_name = tool_calls[0].function.name
-                  score_list = eval(tool_calls[0].function.arguments)['score_list']
+                  score_list = json.loads(tool_calls[0].function.arguments)['score_list']
                   if score_list:
                     if len(score_list) == 10:
                         regen = False
@@ -315,7 +315,7 @@ def generate_words():
             tool_calls = response.choices[0].message.tool_calls
             if tool_calls:
               tool_function_name = tool_calls[0].function.name
-              general_hint = eval(tool_calls[0].function.arguments)['general_hint']
+              general_hint = json.loads(tool_calls[0].function.arguments)['general_hint']
             #   if ("__" not in general_hint):
             #     regen = True
               if detect_multiple_placeholders(general_hint) or target_word in general_hint:
@@ -344,7 +344,7 @@ def generate_words():
             tool_calls = response.choices[0].message.tool_calls
             if tool_calls:
               tool_function_name = tool_calls[0].function.name
-              hint_list = eval(tool_calls[0].function.arguments)['hint_list']
+              hint_list = json.loads(tool_calls[0].function.arguments)['hint_list']
             if len(hint_list) == 2:
                 for i in range(len(hint_list)):
                     # if ("__" not in hint_list[i]):
@@ -380,7 +380,7 @@ def generate_words():
             tool_calls = response.choices[0].message.tool_calls
             if tool_calls:
               tool_function_name = tool_calls[0].function.name
-              final_hint = eval(tool_calls[0].function.arguments)['final_hint']
+              final_hint = json.loads(tool_calls[0].function.arguments)['final_hint']
             #   if ("__" not in final_hint):
             #     regen = True
               if detect_multiple_placeholders(final_hint) or target_word in final_hint:
